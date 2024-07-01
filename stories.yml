@@ -1,0 +1,110 @@
+version: "3.1"
+intents:
+  - greet
+  - first
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - luminar_intro
+  - luminar_course
+  - datascience
+  - python
+  - mearnstack
+  - dotnet
+  - flutter
+  - fullstack
+  - software_testing
+  - location
+  - website
+  
+
+stories:
+
+- story: greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: ask 
+  steps:
+  - intent: first
+  - action: utter_first
+  
+- story: goodbyee
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: ask luminar intro
+  steps:
+  - intent: luminar_intro
+  - action: utter_luminar_intro
+
+- story: ask luminar course
+  steps:
+  - intent: luminar_course
+  - action: utter_luminar_course
+
+- story: ask datascience
+  steps:
+  - intent: datascience
+  - action: utter_datascience
+
+- story: ask python
+  steps:
+  - intent: python
+  - action: utter_python
+
+- story: ask mearnstack
+  steps:
+  - intent: mearnstack
+  - action: utter_mearnstack
+
+- story: ask dotnet
+  steps:
+  - intent: dotnet
+  - action: utter_dotnet
+
+- story: ask flutter
+  steps:
+  - intent: flutter
+  - action: utter_flutter
+
+- story: ask fullstack
+  steps:
+  - intent: fullstack
+  - action: utter_fullstack
+
+- story: ask software testing
+  steps:
+  - intent: software_testing
+  - action: utter_software_testing
+
+- story: ask location
+  steps:
+  - intent: location
+  - action: utter_location
+
+- story: respond to founder name question
+  steps:
+  - intent: ask_founder_name
+  - action: utter_founder_name
+
+- story: ask contact
+  steps:
+  - intent: contact_number
+  - action: utter_contact_number
+
+- story: ask website
+  steps:
+    - intent: website
+    - action: utter_website
+

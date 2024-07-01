@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> 
+<script src="https://kit.fontawesome.com/a0d6211f1d.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            min-height: 100vh;
+            width: 100%;
+            padding: 0 10px;
+            background: url("https://images.pexels.com/photos/5496464/pexels-photo-5496464.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"), #000;
+            background-position: center;
+            background-size: cover;
+            position: relative; /* Ensure relative positioning for absolute elements */
+        }
+
+        .wrapper {
+            /* max-width: 650px; */
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            /* position: relative; Ensure relative positioning for absolute elements */
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            font-weight: bolder;
+        }
+
+        .chatbox {
+            height: 600px;
+            /* max-height: 400px; */
+            overflow-y: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            color: #fff;
+            
+        }
+
+        .chatbox .message {
+            margin: 10px 0;
+            padding: 50px;
+        }
+
+        .chatbox .message .user-message {
+            float: right;
+            color: purple; /* Change color to purple */
+            font-weight: bold; /* Make text bold */
+        }
+
+        .chatbox .message .bot {
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        .input-field {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .input-field input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin-right: 10px;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+            color: #fff;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .input-field input::placeholder {
+            color: #fff;
+        }
+
+        .input-field button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #0c2735;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-field button:hover {
+            background-color: #19313c;
+        }
+
+        .logo {
+            /* position: absolute; */
+            top: 10px; /* Adjusted as needed */
+            right: calc(10px + 800px); /* Adjusted for 20 cm to the left */
+            z-index: 10; /* Ensure it's above other elements */
+            width: 400px; /* Increase size by 10% from original */
+            height: auto; /* Maintain aspect ratio */
+            /* padding: 200px 5px;  */
+            margin-top: 250px;
+            border-radius: 0.75rem;
+            font-size: medium;
+            text-transform: capitalize;
+            
+        }
+    </style>
+    <script>
+        function sendMessage() {
+            const userMessage = document.getElementById('userMessage').value;
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({message: userMessage})
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatBox = document.getElementById('chatBox');
+                chatBox.innerHTML += `<p class="user-message mt-1" style="float:right;font-weight:bolder;font-size: larger;
+            text-transform: capitalize;"> <span> ${userMessage}</p>`;
+                
+                // Check if the bot response contains buttons
+                if (data.buttons) {
+                    // Append each button to the chat box
+                    data.buttons.forEach(button => {
+                        chatBox.innerHTML += `<button onclick="sendButton('${button.payload}')" class="mt-5 btn btn-info py-2" style="margin:10px;border-radious:0.75rem;"  >${button.title}</button>`;
+                    });
+                } else {
+                    // Append regular bot message if no buttons
+                    chatBox.innerHTML += `<p class="bot mt-5" ><b><i class="fa-sharp fa-solid fa-message-bot" style="color: #ad7fa8;"></i></i></b> ${data.message}</p>`;
+                }
+                
+                document.getElementById('userMessage').value = '';
+            });
+        }
+        
+        function sendButton(payload) {
+            // Send the payload (button click action) back to the server
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({message: payload})
+            })
+            .then(response => response.json())
+            .then(data => {
+                const chatBox = document.getElementById('chatBox');
+                // Display bot's response after button click
+                chatBox.innerHTML += `<p class="bot"><b>Bot:</b> ${data.message}</p>`;
+            });
+        }
+    </script>
+</head>
+<body>
+    
+        <div class="row" style="width: 100%;">
+            <div class="col-5 text-center">
+                <img src="https://media.licdn.com/dms/image/D5622AQEOAYsttujTDA/feedshare-shrink_2048_1536/0/1705257455130?e=2147483647&v=beta&t=Ng_fqp9Uv3YoB055ZRTncRqtG8oMwLhYcVEDwUqbseM" alt="Logo" class="logo">
+
+            </div>
+            <div class="col mr-5" >
+                <div class="wrapper">
+                <h2>Chat with Me!</h2>
+                <div class="chatbox" id="chatBox">
+                    <!-- Chat messages will be appended here -->
+                </div>
+                <div class="input-field">
+                    <input type="text" id="userMessage" placeholder="Type your message..." required>
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+        </div>
+      
+   
+</body>
+</html>

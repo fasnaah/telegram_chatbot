@@ -1,0 +1,194 @@
+version: '3.1'
+intents:
+- affirm
+- first
+- bot_challenge
+- datascience
+- deny
+- dotnet
+- flutter
+- fullstack
+- goodbye
+- greet
+- location
+- luminar_course
+- luminar_intro
+- mearnstack
+- mood_great
+- mood_unhappy
+- python
+- website
+- contact_number
+- ask_founder_name
+- certifications
+- software_testing
+
+
+
+responses:
+  utter_greet:
+  - text: Hi ,Thank you for contacting Luminar Technolab. How can I help you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a luminar bot, powered by Rasa.
+  utter_luminar_intro:
+  - text: Luminar Technolab, No.1 Software Training Institute offers various Software Courses along with 100% Guaranteed Placement assistance. We provide Big Data Training, Data Science, Python,Mean Stack,Software Testing & many more.Luminar Technolab is affiliated to National Council for Technology and Training (NACTET). NACTET is an autonomous organisation registered under Govt of Kerala and Government of India NCT, New Delhi under Indian trust act.
+
+  utter_luminar_course:
+  - text: 'We offer a variety of courses: '
+    buttons:
+    - title: BigData Data Science
+      payload: /datascience
+    - title: Python
+      payload: /python
+    - title: MEAN Stack
+      payload: /mearnstack
+    - title: DotNet
+      payload: /dotnet
+    - title: Full Stack
+      payload: /fullstack
+    - title: Flutter
+      payload: /flutter
+    - title: Software testing
+      payload: /software_testing
+  
+  utter_datascience:
+  - text: |
+      PYTHON DATA SCIENCE - ML - AI - & Power BI.<br>
+      Introduction to AWS, Amazon Identity and Access Management (IAM), Elastic Computing (EC2), Simple Storage Service (S3).<br>
+      Next Batch: Cochin : Aug 12th 2024 (Offline & Online), Calicut : Sep 18th 2024 (Offline).<br>
+      Duration: 7 Months, 5 Days a Week, 1.5 - 2 Hours/day.<br>
+      Course Fee:<br>
+        - Fees (EMI Mode) : 72000<br>
+        - Fees (One time Payment mode) : 64500<br>
+
+  utter_python:
+  - text: |
+      Python Django - React - Full Stack Web Development Expert. Core Python, Basics of Programming, Unix Commands, Advanced Python, Django Framework, REST API, Git, ReactJs, Web Concepts & Tools.<br>
+      Next Batch:<br>
+      Cochin : July 17th 2024 (Offline & Online),<br>
+      Calicut : June 17th 2024 (Offline Only).<br>
+      Duration: 6.5 Months, 5 Days a Week, 2 Hours/day.<br>
+      Course Fee:<br>
+        - Fees (EMI Mode) : 45000,<br>
+        - Fees (One time Payment mode) : 39500<br>
+
+  utter_mearnstack:
+    - text: |
+        MEA(R)N Stack Web Development Expert - Angular & React. HTML, CSS, Bootstrap, Javascript, Typescript, Git, Angular, React.js, Node.js, Express.js & MongoDB.<br>
+        Next Batch: <br>
+        Cochin : Aug 12th 2024 (Offline & Online), <br>
+        Calicut : June 19th 2024 (Offline).<br>
+        Duration: 6 Months, 5 Days a Week, 1.5-2 Hours/day.<br>
+        Course Fee: <br>
+          - Fees (EMI Mode) : 55000, <br>
+          - Fees (One time Payment mode) : 49500<br>
+
+  utter_dotnet:
+    - text: |
+        Asp.net MVC with Angular - Full Stack. Introduction, Git installation, Repository creation in GitHub, Commands in git, Real time code integration.<br>
+        Next Batch: <br>
+        Cochin : July 17th 2024 (Offline & Online), <br>
+        Calicut : Not Available.<br>
+        Duration: 5 Months, 5 Days a Week, 2 Hours/day.<br>
+        Course Fee: <br>
+          - Fees (EMI Mode) : 45000, <br>
+          - Fees (One time Payment mode) : 39500<br>
+
+  utter_fullstack:
+    - text: |
+        Java Spring Full Stack Development. Java Fundamentals, OOPS, Advanced Java, Java Database Programming, JDK New Features, JAVA Enterprise Edition (Java EE), JPA & Hibernate ,Spring & Spring Boot.<br>
+        Next Batch: <br>
+        Cochin : Aug 21st 2024 (09:00 AM - 11:00 AM), <br>
+        Calicut : Not Available.<br>
+        Duration: 4 Months, 5 Days a Week, 2 Hours/day.<br>
+        Course Fee: <br>
+          - Fees (EMI Mode) : 41000, <br>
+          - Fees (One time Payment mode) : 37500<br>
+
+  utter_flutter:
+    - text: |
+        Best Flutter Training In Kochi (Cochin), & Calicut (Kozhikode). Dart, Flutter Introduction to Android, Android Studio, vscode, AndroidManifest.xml, Directories, Layout Designing, Basics & Intents, figma basic,<br>
+         UI Designing, Composite & Custom Views, Time, Date & Dialog Boxes, Media & Menu, Fragment & Material Designs, Notifications, Telephony & Connectivity, Internal Storage & External Storage, Async Task, Parsing & Shared Preferences, <br>
+         SQFite Database, Hive Database, Firebase, API Testing Using Postman, swagger, Web Services, Design Patterns, GitHub ,bundle creation, mini projects, Main Project, publish to Play store.<br>
+        Next Batch: <br>
+        Cochin : June 19th 2024 (Offline & Online), <br>
+        Calicut : June 19th 2024 (Offline Only).<br>
+        Duration: 5 months (2 Hours/day).<br>
+        Course Fee: <br>
+          - Fees (EMI Mode) : 41000, <br>
+          - Fees (One time Payment mode) : 37500<br>
+          
+  utter_software_testing:
+    - text: |
+        Manual Testing, Java foundations, Mobile Testing, Automation Testing, Selenium IDE, Selenium Web driver, Selenium Advanced Web driver, Selenium Grid,\n
+        TestNG, SQL workshop, Performance Testing, JMeter - Advanced, POSTMAN, API Testing, JIRA, Course Project\n
+        \n
+        Next Batch:\n
+        Cochin: July 17th 2024 (Offline & Online)\n
+        Calicut: June 19th 2024 (Offline Only)\n
+        \n
+        Duration:\n
+        4 Months, 5 Days a Week, 1.5 - 2 Hours/day\n
+        \n
+        Course Fee:\n
+        Fees (EMI Mode): 41000\n
+        Fees (One time Payment mode): 37500
+
+
+  utter_location:
+    - text: |
+        Luminar Technolab Pvt Ltd. Ground Floor,K7 REALTY, Juma masjid road, Seaport - Airport Rd, near Opp: District Panchayat, Kakkanad, Kochi, Kerala - 682030
+
+  utter_website:
+  - text: |
+        here is the link to our website : https://www.luminartechnolab.com/
+
+  utter_contact_number:
+  - text: |
+        message to us to the whatsapp Number: 8943237927 or Call on 8086651651
+
+  utter_certification_details:
+  - text: "Luminar Technolab is an ISO 9001:2015 Certified Institution.\nWe are affiliated with the National Council for Technology and Training (NACTET).\nNACTET is an autonomous organization registered under the Government of Kerala and the Government of India NCT, New Delhi, under the Indian Trust Act.\nThis affiliation and certification ensure that our training meets high standards of quality and effectiveness."
+  utter_founder_name:
+    - text: "Rahul M Kumar"
+  utter_first:
+  - text: " Thank you for contacting Luminar Technolab."
+
+actions:
+- utter_goodbye
+- utter_greet
+- utter_first
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_iamabot
+- utter_luminar_intro
+- utter_luminar_course
+- utter_datascience
+- utter_python
+- utter_mearnstack
+- utter_dotnet
+- utter_fullstack
+- utter_flutter
+- utter_location
+- utter_website
+- utter_contact_number
+- utter_certification_details
+- utter_founder_name
+- utter_software_testing
+
+# - action_hello_world
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

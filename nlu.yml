@@ -1,0 +1,333 @@
+version: "3.1"
+nlu:
+- intent: first
+  examples: |
+    - thank you
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - location
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: luminar_intro
+  examples: |
+    - what is luminar?
+    - Can you provide an introduction to Luminar Technolab?
+    - Tell me about Luminar Technolab.
+    - What makes Luminar Technolab unique?
+    - Tell me about Luminar Technolab
+    - What is Luminar Technolab?
+    - Give me an overview of Luminar Technolab
+    - Can you provide information about Luminar Technolab?
+    - What does Luminar Technolab do?
+
+- intent: luminar_course
+  examples: |
+    - Can you tell me about the courses available at Luminar Technolab?
+    - What training programs are offered at Luminar Technolab?
+    - List the courses provided by Luminar Technolab.
+    - What are the different courses at Luminar Technolab?
+    - What educational programs does Luminar Technolab have?
+    - I want to know about the courses at Luminar Technolab.
+    - What can I learn at Luminar Technolab?
+    - Which courses are available at Luminar Technolab?
+    - Tell me about Luminar Technolab's course offerings.
+    - What are the training options at Luminar Technolab?
+    - Could you provide details on the courses Luminar Technolab offers?
+    - What learning opportunities does Luminar Technolab provide?
+    - What subjects can I study at Luminar Technolab?
+    - Are there any specific courses Luminar Technolab specializes in?
+    - What academic programs does Luminar Technolab offer?
+    - What courses do you offer?
+    - Tell me about the courses at Luminar Technolab
+    - What training programs are available?
+    - What subjects can I study at Luminar Technolab?
+    - Do you offer courses in Data Science?
+    - What are the emerging technologies courses available?
+
+
+- intent: datascience
+  examples: |
+    - What is the Data Science course about?
+    - Can you give me an overview of the Data Science training program?
+    - Tell me more about the Data Science course.
+    - What topics are covered in the Data Science course?
+    - Can you provide a syllabus for the Data Science training?
+    - What will I learn in the Data Science course?
+    - How long is the Data Science course?
+    - What is the duration of the Data Science training program?
+    - How many weeks does the Data Science course take?
+    - What is the fee for the Data Science course?
+    - How much does the Data Science training program cost?
+    - Are there any discounts available for the Data Science course?
+- intent: python
+  examples: |
+    - What is the Python course about?
+    - Can you give me an overview of the Python training program?
+    - Tell me more about the Python course.
+    - What topics are covered in the Python course?
+    - Can you provide a syllabus for the Python training?
+    - What will I learn in the Python course?
+    - How long is the Python course?
+    - What is the duration of the Python training program?
+    - How many weeks does the Python course take?
+    - What is the fee for the Python course?
+    - How much does the Python training program cost?
+    - Are there any discounts available for the Python course?
+- intent: mearnstack
+  examples: |
+    - What is the MERN Stack course about?
+    - Can you give me an overview of the MERN Stack training program?
+    - Tell me more about the MERN Stack course.
+    - What topics are covered in the MERN Stack course?
+    - Can you provide a syllabus for the MERN Stack training?
+    - What will I learn in the MERN Stack course?
+    - How long is the MERN Stack course?
+    - What is the duration of the MERN Stack training program?
+    - How many weeks does the MERN Stack course take?
+    - What is the fee for the MERN Stack course?
+    - How much does the MERN Stack training program cost?
+    - Are there any discounts available for the MERN Stack course?
+- intent: dotnet
+  examples: |
+    - What is the dot net course about?
+    - Can you give me an overview of the dot net training program?
+    - Tell me more about the dot net course.
+    - What topics are covered in the dot net course?
+    - Can you provide a syllabus for the dot net training?
+    - What will I learn in the dot net course?
+    - How long is the dot net course?
+    - What is the duration of the dot net training program?
+    - How many weeks does the dot net course take?
+    - What is the fee for the dot net course?
+    - How much does the dot net training program cost?
+    - Are there any discounts available for the dot net course?
+- intent: flutter
+  examples: |
+    - What is the flutter course about?
+    - Can you give me an overview of the flutter training program?
+    - Tell me more about the flutter course.
+    - What topics are covered in the flutter course?
+    - Can you provide a syllabus for the flutter training?
+    - What will I learn in the flutter course?
+    - How long is the flutter course?
+    - What is the duration of the flutter training program?
+    - How many weeks does the flutter course take?
+    - What is the fee for the flutter course?
+    - How much does the flutter training program cost?
+    - Are there any discounts available for the flutter course?
+- intent: fullstack
+  examples: |
+    - What is the full stack course about?
+    - Can you give me an overview of the full stack training program?
+    - Tell me more about the full stack course.
+    - What topics are covered in the full stack course?
+    - Can you provide a syllabus for the full stack training?
+    - What will I learn in the full stack course?
+    - How long is the full stack course?
+    - What is the duration of the full stack training program?
+    - How many weeks does the full stack course take?
+    - What is the fee for the full stack course?
+    - How much does the full stack training program cost?
+    - Are there any discounts available for the full stack course?
+
+- intent: website
+  examples: |
+    - I want to know about your website
+    - Tell me about your site
+    - What about your webpage
+    - Can you give me your website URL?
+    - What is the URL of your website?
+    - Where can I find your website?
+    - Do you have a website?
+    - What is your website address?
+    - Can you provide me with your website link?
+    - How can I access your website?
+    - What is the link to your site?
+    - Could you share your website?
+    - Whats your web address?
+    - Give me your website link
+    - How can I visit your website?
+    - Where is your website?
+    - What is your online address?
+    - Do you have a web page?
+    - Provide me with the link to your website
+    - Can you tell me your website address?
+    - I need your website link
+    - Whats your website?
+    - Tell me your website URL
+
+- intent: location
+  examples: |
+    - Where is Luminar Technolab located?
+    - Are you based in Cochin, Kerala?
+    - Can you provide the address of Luminar Technolab?
+    - What is the location of Luminar Technolab?
+    - Can you tell me where Luminar Technolab is?
+    - How can I get to Luminar Technolab?
+    - Where can I find Luminar Technolab?
+    - Where exactly is Luminar Technolab?
+    - What is the exact address of Luminar Technolab?
+    - Could you share the location of Luminar Technolab?
+    - Where is your office situated?
+    - What is the address for Luminar Technolab in Cochin?
+    - Can you tell me the location of your institute?
+    - Where is your institute located?
+    - How do I get to Luminar Technolab?
+    - Where are you guys located?
+    - Where is Luminar Technolab's office?
+    - Can you share the address of Luminar Technolab?
+    - Which city is Luminar Technolab located in?
+    - Are you located in Kerala?
+    - What's the location of Luminar Technolab in Cochin?
+    - How can I reach Luminar Technolab?
+    - What is the full address of Luminar Technolab?
+    - Where is Luminar Technolab in Kerala?
+    - Can you provide directions to Luminar Technolab?
+    - location
+- intent: contact_number
+  examples: |
+    - What is the contact number for Luminar Technolab?
+    - Can you give me your phone number?
+    - How can I contact you?
+    - What's your contact number?
+    - Could you provide me with your phone number?
+    - I need the contact number of Luminar Technolab
+    - Can I have your contact number?
+    - What is the phone number for Luminar Technolab?
+    - How do I reach you by phone?
+    - What's the phone number of your institute?
+    - Tell me the contact number for Luminar Technolab
+    - Can you share your contact number?
+    - What's your institute's phone number?
+    - How can I call you?
+    - Give me the phone number for Luminar Technolab
+    - What is your telephone number?
+    - How can I get in touch with Luminar Technolab?
+    - I need your phone number
+    - Whats your direct phone number?
+    - Could you give me the contact number for your institute?
+    
+- intent: certifications
+  examples: |
+    - Are you an ISO certified institution?
+    - Tell me about your certifications
+    - Is Luminar Technolab ISO 9001:2015 certified?
+    - What certifications do you have?
+    - Are you affiliated with any organizations?
+    - What is NACTET affiliation?
+    
+- intent: ask_founder_name
+  examples: |
+    - Who is the founder of Luminar Technolab?
+    - Can you tell me the name of Luminar Technolab's founder?
+    - Who founded Luminar Technolab?
+    - What is the name of the founder of Luminar Technolab?
+    - Who established Luminar Technolab?
+
+- intent: software_testing
+  examples: |
+    - Tell me about your software testing course
+    - What does your software testing program include?
+    - Can you provide details about the software testing course?
+    - What topics are covered in the software testing training?
+    - Give me information about the software testing classes
+    - What is included in the software testing curriculum?
+    - I want to know about the software testing course
+    - Describe the software testing course contents
+    - What do you teach in the software testing course?
+    - Can you list the topics for the software testing course?
+    - What are the modules in the software testing program?
+    - Tell me the schedule for the software testing course
+    - When does the next software testing batch start?
+    - What are the start dates for the software testing course?
+    - How long is the software testing course?
+    - What is the duration of the software testing course?
+    - What is the fee structure for the software testing course?
+    - How much does the software testing course cost?
+    - What is the price for the software testing training?
+    - Are there any EMI options for the software testing course fee?
+    - Do you offer the software testing course online?
+    - Is the software testing course available offline?
+    - Where can I take the software testing course?
+    - Are there software testing classes in Cochin?
+    - Is the software testing course offered in Calicut?
+
